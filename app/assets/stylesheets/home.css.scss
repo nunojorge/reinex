@@ -1,0 +1,37 @@
+#header {
+        background-color: #00FFFF;
+        height: 60px;
+        padding-top: 8px;
+}
+ul{
+list-style-image:url('http://publib.boulder.ibm.com/infocenter/tivihelp/v15r1/topic/com.ibm.itm.doc_6.2.1/ilog_delete.gif');
+}
+#container {
+    width:100%;
+    height:400px;
+}
+#ingredients {
+    width:33.333%;
+    height:600px;
+    float:left;
+    background-color: white;
+}
+#recipes {
+    width:33.333%;
+    height:600px;
+    float:left;
+    background-color:yellow;
+}
+#exercises {
+    width:33.333%;
+    height:600px;
+    float:left;
+    background-color:pink;
+}
+#footer {
+        background-color: #FFFFCC;
+        color: #FFFFCC;
+  		position: absolute;
+  		bottom: 0;
+  		width: 100%;
+}
