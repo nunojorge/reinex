@@ -1,5 +1,7 @@
 Reinex::Application.routes.draw do
+  get "ingredients/index"
   get "home/index"
+  resources :ingredients
   root "home#index"
 end
   # The priority is based upon order of creation: first created -> highest priority.

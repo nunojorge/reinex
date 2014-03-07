@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+data = JSON.parse(IO.read("db/ingredient_list.json"))
+data["ingredients"].each do |ingredient|
+	Ingredient.create(name: ingredient["searchValue"])
+end
