@@ -48,6 +48,19 @@
 			var urlOne = "http://api.yummly.com/v1/api/recipes?_app_id=24d6787a&_app_key=96f1d514381c608c7a935da725cbb2f2";
 			var urlTwo = urlOne + allowedIngredientList;
 			alert(urlTwo);
+			$.ajax({
+  				dataType: "jsonp",
+  				url: urlTwo ,
+  				}).done(function (data ) {
+  					alert(data.totalMatchCount);
+
+
+  			});
+			 /*$.getJSON(urlTwo, function(matches) {
+              $('#recipes').html('<p> First ID: ' + matches[0].id + '</p>');
+              $('#recipes').append('<p>second ID : ' + matches[1].id+ '</p>');
+              $('#recipes').append('<p> Third ID: ' + matches[2].id+ '</p>');
+           });*/
 
 		});
 	});
