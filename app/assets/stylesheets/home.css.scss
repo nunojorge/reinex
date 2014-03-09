@@ -1,10 +1,13 @@
+span{
+    color:red;
+}
 #header {
         background-color: #00FFFF;
         height: 60px;
         padding-top: 8px;
 }
 ul{
-list-style-image:url('http://publib.boulder.ibm.com/infocenter/tivihelp/v15r1/topic/com.ibm.itm.doc_6.2.1/ilog_delete.gif');
+list-style-type:none;
 }
 #container {
     width:100%;
