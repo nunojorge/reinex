@@ -116,7 +116,28 @@
 								var name = data.name;
 								var url = data.source.sourceRecipeUrl;
 								var image = data.images[0].hostedSmallUrl;
-								$('ol').prepend("<li><img src='"+image+"' alt='"+name+"' height='25' width='25'><a href='"+url+"' target='_blank'>"+name+"</a></li>");
+								$('.recipes').prepend("<li><img src='"+image+"' alt='"+name+"' height='25' width='25'><a href='"+url+"' target='_blank'>"+name+"</a></li>");
+
+								var grams =  0;
+								var kcals = 0;
+								var IUs = 0;
+								for (var i = 0; i < data.nutritionEstimates.length; i++) {
+									if (!data.nutritionEstimates[i].unit.abbreviation) {
+										continue;
+									}
+									else if(data.nutritionEstimates[i].unit.abbreviation === "kcal"){
+										kcals = kcals + data.nutritionEstimates[i].value;
+
+									}
+									else if(data.nutritionEstimates[i].unit.abbreviation === "g"){
+										grams = grams + data.nutritionEstimates[i].value ;
+									}
+									else if(data.nutritionEstimates[i].unit.abbreviation === "IU"){
+										IUs = IUs + data.nutritionEstimates[i].value;
+									}
+
+								}
+								alert("the grams are: "+grams+"the kcals are: "+ kcals+"the ius are: "+IUs);
 					 		}
 						);
 					}
