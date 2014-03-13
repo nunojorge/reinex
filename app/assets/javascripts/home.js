@@ -38,41 +38,13 @@ $(document).ready (function() {
 	    }, 100);
 	}
 
-	var ingredientList = new Array();
-	$( "#ingredient" ).autocomplete({
-		source: [
-		"salt",
-		"garlic",
-		"cognac",
-		"sugar",
-		"butter",
-		"onion",
-		"eggs",
-		"water",
-		"pepper",
-		"black pepper",
-		"garlic cloves",
-		"all-purpose flour",
-		"milk",
-		"flour",
-		"brown sugar",
-		"lemon juice",
-		"unsalted butter",
-		"tomatoes",
-		"vanilla extraxt",
-		"carrots",
-		"baking soda",
-		"extra-virgin olive oil",
-		"vanilla",
-		"green onions"]
-	});
 	$('#add').click(function() {
-		var item = $('#ingredient');
-		$('ul').prepend("<li>"+item.val()+"<span> x</span></li>");
+		var item = $("#one-ingredient").val();
+		$('ul').prepend("<li>"+item+"<span> x</span></li>");
 		ingredientList.push("&allowedIngredient[]=");
-		ingredientList.push(item.val());
+		ingredientList.push(item);
 
-	});
+		});
 	$('ul').on('click','span', function(){
 		$(this).closest('li').remove();
 		var ingredientWithX = $(this).closest('li').text();
