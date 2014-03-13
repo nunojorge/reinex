@@ -1,19 +1,58 @@
+body {
+    padding: 5px;
+}
+.doorframe {
+    border: 1px solid black;
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    position: relative;
+}
+.door {
+    margin: 0 auto;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 1px solid #444;
+    -webkit-transform-origin: left;
+    background: url('http://i.ebayimg.com/t/Internal-White-Primed-Colonist-6P-Door-/00/s/ODAwWDMwMw==/z/CncAAMXQlUNRQyir/$T2eC16hHJIIE9qTYM,zhBRQyirgWZ!~~60_1.JPG');
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
 span{
     color:red;
 }
 #header {
         background-color: #00FFFF;
-        height: 60px;
-        padding-top: 8px;
+        height: 100px;
+        padding-top: 10px;
 }
 ul{
 list-style-type:none;
 }
 #container {
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
     width:100%;
     height:400px;
 }
 #ingredients {
+    height: auto;
+    margin: auto;
+    position: fixed;
     width:33.333%;
     height:600px;
     float:left;
@@ -21,21 +60,14 @@ list-style-type:none;
 }
 #recipes {
     width:33.333%;
-    background-image: url("http://marblereview.com/wp-content/uploads/2013/04/images-8.jpg");
     height:600px;
-    float:left;
+    float:right;
     background-color:white;
 }
 #exercises {
     width:33.333%;
     height:600px;
-    float:left;
-    background-color:pink;
+    float:right;
+    background-color:yellow;
 }
-#footer {
-        background-color: #FFFFCC;
-        color: #FFFFCC;
-  		position: absolute;
-  		bottom: 0;
-  		width: 100%;
-}
+
