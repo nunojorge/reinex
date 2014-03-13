@@ -37,7 +37,7 @@ $(document).ready (function() {
 	        closeDoor(door, angle+=5);
 	    }, 100);
 	}
-
+	var ingredientList = new Array();
 	$('#add').click(function() {
 		var item = $("#one-ingredient").val();
 		$('ul').prepend("<li>"+item+"<span> x</span></li>");
