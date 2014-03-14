@@ -77,7 +77,7 @@ $(document).ready (function() {
 					var name = data.name;
 					var url = data.source.sourceRecipeUrl;
 					var image = data.images[0].hostedSmallUrl;
-					$('.recipes').prepend("<li><img src='"+image+"' alt='"+name+"' height='25' width='25'><a href='"+url+"' target='_blank'>"+name+"</a></li>");
+					$('.recipes').prepend("<li><img src='"+image+"' alt='"+name+"' height='25' width='25'><a href='"+url+"' target='_blank'>"+name+"</a><button id='addRecipeToUser' type='button'>+</button></li>");
 
 					var grams =  0;
 					var kcals = 0;

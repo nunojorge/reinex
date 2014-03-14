@@ -20,7 +20,6 @@ $( document ).ready( function() {
         		return false;
         	}
         	matches.push({ value: str });
-        	alert(str);
     	}
 	});
 
