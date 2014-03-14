@@ -38,13 +38,7 @@ $(document).ready (function() {
 	    }, 100);
 	}
 	var ingredientList = new Array();
-	$('#add').click(function() {
-		var item = $("#one-ingredient").val();
-		$('ul').prepend("<li>"+item+"<span> x</span></li>");
-		ingredientList.push("&allowedIngredient[]=");
-		ingredientList.push(item);
 
-		});
 	$('ul').on('click','span', function(){
 		$(this).closest('li').remove();
 		var ingredientWithX = $(this).closest('li').text();
@@ -53,7 +47,11 @@ $(document).ready (function() {
 		ingredientList.splice(index, 1);
 		ingredientList.splice(index - 1,1);
 	});
-	$('#getRecipes').click(function() {
+	$('#add').click(function() {
+		var item = $("#one-ingredient").val();
+		$('ul').prepend("<li>"+item+"<span> x</span></li>");
+		ingredientList.push("&allowedIngredient[]=");
+		ingredientList.push(item);
 		var allowedIngredientList = ingredientList.join("");
 		var urlOne = "http://api.yummly.com/v1/api/recipes?_app_id=24d6787a&_app_key=96f1d514381c608c7a935da725cbb2f2";
 		var urlTwo = urlOne + allowedIngredientList;
@@ -100,11 +98,10 @@ $(document).ready (function() {
 					}
 					var calsToBurn = ( grams /7.716) + ( kcals/1000 );
 					$('.exercises').prepend("<li>Calories to burn: "+calsToBurn+"</li>");
+					}
+					);
 				}
-				);
-}
-}
-);
-
+			}
+		);
+	});
 });
-		});
