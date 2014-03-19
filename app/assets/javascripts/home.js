@@ -41,9 +41,13 @@ $(document).ready (function() {
             closeDoor(door, angle+=5);
         }, 100);
     }
+    function removeRecipesAndExercises() {
+        $( "li" ).remove( '.child' );
+    }
     var ingredientList = new Array();
 
     $('ul').on('click','span', function(){
+        removeRecipesAndExercises();
         $(this).closest('li').remove();
         var ingredientWithX = $(this).closest('li').text();
         var ingredientWithoutX = ingredientWithX.substring(0, ingredientWithX.length - 2 );
@@ -52,6 +56,7 @@ $(document).ready (function() {
         ingredientList.splice(index - 1,1);
     });
     $('#add').click(function() {
+        removeRecipesAndExercises();
         var item = $("#one-ingredient").val();
         $('ul').prepend("<li>"+item+"<span> x</span></li>");
         ingredientList.push("&allowedIngredient[]=");
@@ -79,7 +84,7 @@ $(document).ready (function() {
                     var name = data.name;
                     var url = data.source.sourceRecipeUrl;
                     var image = data.images[0].hostedSmallUrl;
-                    $('.recipes-list').prepend("<li><img src='"+image+"' alt='"+name+"' height='25' width='25'><a href='"+url+"' target='_blank'>"+name+"</a><button id='addRecipeToUser' type='button'>+</button></li>");
+                    $('.recipes-list').prepend("<li class='child'><img src='"+image+"' alt='"+name+"' height='25' width='25'><a href='"+url+"' target='_blank'>"+name+"</a><button id='addRecipeToUser' type='button'>+</button></li>");
 
                     var grams =  0;
                     var kcals = 0;
@@ -101,7 +106,7 @@ $(document).ready (function() {
 
                     }
                     var calsToBurn = ( grams /7.716) + ( kcals/1000 );
-                    $('.exercises-list').prepend("<li>Calories to burn: "+calsToBurn+"</li>");
+                    $('.exercises-list').prepend("<li class='child'>Calories to burn: "+calsToBurn+"</li>");
                     }
                     );
                 }
